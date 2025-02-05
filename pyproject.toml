@@ -1,0 +1,7 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "ai_dj_remixer"
+version = "0.1.0"
+dependencies = []
