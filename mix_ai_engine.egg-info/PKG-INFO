@@ -11,3 +11,4 @@ Requires-Dist: pydub
 Requires-Dist: librosa
 Requires-Dist: numpy
 Requires-Dist: soundfile
+Requires-Dist: pyrubberband

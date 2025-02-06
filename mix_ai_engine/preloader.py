@@ -1,5 +1,6 @@
 import librosa
 import soundfile as sf
+import pyrubberband as rubberband
 
 class d_Song:
 
@@ -69,16 +70,26 @@ class d_Song:
       return self.__tempo
   
 
-  def set_tempo(self, val):
-    pass
+  def change_tempo(self, tempo_shift):
+    """
+    Changes the tempo of an audio file. float deviation from 1 = percent change in tempo
 
+    :param tempo_shift: percent to change the tempo by
+    """
+    # TODO print change in tempo
+    self.__y = rubberband.time_stretch(y=self.__y, sr=self.__sr, rate=tempo_shift)
+    # self.__y = librosa.effects.time_stretch(y=self.__y, rate=tempo_shift)
+
+  
   def change_pitch(self, pitch_shift):
     """
-    Changes the pitch of an audio file.
+    Changes the pitch of an audio file. 1 pitch shift = 1 semi-tone up
 
-    :param pitch_shift: Number of semitones to shift (positive = higher, negative = lower)
+    :param pitch_shift: number of semitones to shift (positive = higher, negative = lower)
     """
-    self.__y = librosa.effects.pitch_shift(y=self.__y, sr=self.__sr, n_steps=pitch_shift)
+    # TODO print change in pitch
+    self.__y = rubberband.pitch_shift(y=self.__y, sr=self.__sr, n_steps=pitch_shift)
+    # self.__y = librosa.effects.pitch_shift(y=self.__y, sr=self.__sr, n_steps=pitch_shift)
     
 
   def export_to_location(self, output_path):
@@ -86,5 +97,5 @@ class d_Song:
     Export the current song to a specific export_path
 
     :param output_path: Path to export the current stored y and sr as an audio file to
-    """
-    sf.write(output_path, self.__y, self.__sr)
+    """  
+    sf.write(output_path, self.__y, self.__sr, subtype='FLOAT')
