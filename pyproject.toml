@@ -2,6 +2,23 @@
 requires = ["setuptools", "wheel"]
 
 [project]
-name = "mix-ai-engine"
+name = "mix_ai_engine"
 version = "0.1.0"
-dependencies = []
+dependencies = ['pydub', 'librosa', 'numpy', 'soundfile']
+authors = [
+  { name = "Lance Hartman", email = "lancehar@seas.upenn.edu" },
+  { name = "Luka Koll", email = "lkoll@seas.upenn.edu" },
+]
+maintainers = [
+  { name = "Lance Hartman", email = "lancehar@seas.upenn.edu" },
+  { name = "Luka Koll", email = "lkoll@seas.upenn.edu" },
+]
+description = "Engine used to power mix-ai"
+readme = "README.md"
+
+[project.urls]
+# Homepage = "https://example.com"
+# Documentation = "https://readthedocs.org"
+Repository = "https://github.com/LanceGuy5/mix-ai-engine"
+# Issues = "https://github.com/me/spam/issues"
+# Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"

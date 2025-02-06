@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: mix_ai_engine
+Version: 0.1.0
+Summary: Engine used to power mix-ai
+Author-email: Lance Hartman <lancehar@seas.upenn.edu>, Luka Koll <lkoll@seas.upenn.edu>
+Maintainer-email: Lance Hartman <lancehar@seas.upenn.edu>, Luka Koll <lkoll@seas.upenn.edu>
+Project-URL: Repository, https://github.com/LanceGuy5/mix-ai-engine
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pydub
+Requires-Dist: librosa
+Requires-Dist: numpy
+Requires-Dist: soundfile
